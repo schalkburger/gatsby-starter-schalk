@@ -3,45 +3,45 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import './index.scss';
 
-interface IndexPageProps {
+interface NotFoundPageProps {
   data: {
     site: {
       siteMetadata: {
-        name: string;
-        tagline: string;
+        notfoundheading: string;
+        notfoundtext: string;
       },
     },
   };
 }
 
-export const indexPageQuery = graphql`
-  query IndexPageQuery {
+export const NotFoundPageQuery = graphql`
+  query NotFoundPageQuery {
     site {
       siteMetadata {
-        name
-        tagline
+        notfoundheading
+        notfoundtext
       }
     }
   }
 `;
 
-export default class IndexPage extends React.Component<IndexPageProps, {}> {
+export default class NotFoundPage extends React.Component<NotFoundPageProps, {}> {
 
   public render() {
     const {
-      name,
-      tagline,
+      notfoundheading,
+      notfoundtext,
     } = this.props.data.site.siteMetadata;
 
     return (
       <div className="index">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>{name}</title>
+          <title>{notfoundheading}</title>
         </Helmet>
         <div className="container">
-          <h1 className="name">{name}</h1>
-          <p>{tagline}</p>
+          <h1 className="name">{notfoundheading}</h1>
+          <p>{notfoundtext}</p>
         </div>
       </div>
     );

@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
-    name: `Hello Typescript World!`,
-    tagline: `Gatsby + SASS + Typescript + Helmet`
+    name: `Schalk Gatsby Starter`,
+    tagline: `Gatsby + SASS + Typescript + Helmet`,
+    notfoundheading: `404 Page Not Found`,
+    notfoundtext: `The page you are looking for does not exist`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
