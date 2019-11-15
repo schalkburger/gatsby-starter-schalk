@@ -10,7 +10,7 @@ This setup includes:
 
 Install this starter by running this from your [Gatsby CLI](https://next.gatsbyjs.org/tutorial/part-zero/#install-the-gatsby-cli):
 ```
-gatsby new gatsby-site https://github.com/tdharmon/gatsby-starter-typescript-sass
+gatsby new gatsby-site https://github.com/schalkburger/gatsby-starter-schalk
 ```
 
 ## Start development server
