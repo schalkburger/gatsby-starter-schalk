@@ -7,8 +7,10 @@ interface NotFoundPageProps {
   data: {
     site: {
       siteMetadata: {
-        notfoundheading: string;
-        notfoundtext: string;
+        notFoundPage: {
+          heading: string;
+          text: string;
+        },
       },
     },
   };
@@ -18,8 +20,10 @@ export const NotFoundPageQuery = graphql`
   query NotFoundPageQuery {
     site {
       siteMetadata {
-        notfoundheading
-        notfoundtext
+        notFoundPage {
+          heading
+          text
+        }
       }
     }
   }
@@ -29,19 +33,19 @@ export default class NotFoundPage extends React.Component<NotFoundPageProps, {}>
 
   public render() {
     const {
-      notfoundheading,
-      notfoundtext,
-    } = this.props.data.site.siteMetadata;
+      heading,
+      text,
+    } = this.props.data.site.siteMetadata.notFoundPage;
 
     return (
       <div className="index">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>{notfoundheading}</title>
+          <title>{heading}</title>
         </Helmet>
         <div className="container">
-          <h1 className="name">{notfoundheading}</h1>
-          <p>{notfoundtext}</p>
+          <h1 className="name">{heading}</h1>
+          <p>{text}</p>
         </div>
       </div>
     );

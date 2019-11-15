@@ -1,9 +1,13 @@
 module.exports = {
   siteMetadata: {
-    name: `Schalk Gatsby Starter`,
-    tagline: `Gatsby + SASS + Typescript + Helmet`,
-    notfoundheading: `404 Page Not Found`,
-    notfoundtext: `The page you are looking for does not exist`,
+    name: `Penny Pace Photography`,
+    notFoundPage: {
+      heading: `404 Page Not Found`,
+      text: `The page you are looking for does not exist`,
+    },
+    homePage: {
+      heroText: `“Breathtaking photography that you will remember for a lifetime”`,
+    },
   },
   plugins: [
     `gatsby-plugin-typescript`,

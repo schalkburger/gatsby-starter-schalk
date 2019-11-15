@@ -8,7 +8,10 @@ interface IndexPageProps {
     site: {
       siteMetadata: {
         name: string;
-        tagline: string;
+        homePage: {
+          heroText: string;
+          heroSubtitle: string;
+        },
       },
     },
   };
@@ -19,7 +22,9 @@ export const indexPageQuery = graphql`
     site {
       siteMetadata {
         name
-        tagline
+        homePage {
+          heroText
+        }
       }
     }
   }
@@ -30,8 +35,11 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
   public render() {
     const {
       name,
-      tagline,
     } = this.props.data.site.siteMetadata;
+
+    const {
+      heroText,
+    } = this.props.data.site.siteMetadata.homePage;
 
     return (
       <div className="index">
@@ -41,7 +49,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
         </Helmet>
         <div className="container">
           <h1 className="name">{name}</h1>
-          <p>{tagline}</p>
+          <p>{heroText}</p>
         </div>
       </div>
     );

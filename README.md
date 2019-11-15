@@ -1,17 +1,17 @@
-# Gatsby Starter Schalk
-Gatsby starter with the opinionated essentials needed for a [Gatsby](https://www.gatsbyjs.org/) site. Forked from [tdharmon's gatsby starter](https://github.com/tdharmon/gatsby-starter-typescript-sass).
+# Example website built using Gatsby Starter Schalk
+This is an example site I built using Gatsby Starter Schalk.
 
-This setup includes:
+This example site demonstrates how you can use Gatsby to build a site with a couple of different pages, an organised styling structure, and proper page meta for all your pages.
 
-- TypeScript
-- TypeScript linting
-- SASS support
-- Helmet for page meta
+## Resources used
 
-Install this starter by running this from your [Gatsby CLI](https://next.gatsbyjs.org/tutorial/part-zero/#install-the-gatsby-cli):
-```
-gatsby new gatsby-site https://github.com/schalkburger/gatsby-starter-schalk
-```
+These are the resources I  used to build this demo site:
+
+* [Figma](https://www.figma.com/) for designing a mockup
+* [Unsplash](https://unsplash.com/) for stock photos
+* [Google Fonts](https://fonts.google.com/) for website fonts
+* [generated.photos](https://generated.photos/) for an AI generated profile picture
+* [Dummy Text Generator](https://www.blindtextgenerator.com/lorem-ipsum) for random text content
 
 ## Start development server
 
