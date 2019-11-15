@@ -37,7 +37,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
       <div className="index">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Gatsby + SASS + Typescript</title>
+          <title>{tagline}</title>
         </Helmet>
         <div className="container">
           <h1 className="name">{name}</h1>
