@@ -1,3 +1,7 @@
+.layout {
+	padding: 0 40px;
+}
+
 .page {
 	height: 100vh;
 }
@@ -11,7 +15,6 @@
 .container {
 	max-width: 1140px;
 	margin: 0 auto;
-	font-family: sans-serif;
 }
 
 .header {
@@ -23,12 +26,36 @@
 		margin-top: 30px;
 	}
 	nav {
-		min-width: 400px;
+		min-width: 380px;
 		display: flex;
 		justify-content: space-between;
 		a {
 			text-transform: uppercase;
 			font-size: 24px;
+			font-weight: 300;
+			letter-spacing: 0.06em;
 		}
+	}
+}
+
+.hero {
+	max-width: 900px;
+	margin: 40px auto 0 auto;
+	text-align: center;
+	h1 {
+		font-family: $font-family-secondary;
+		font-size: 85px;
+		font-weight: normal;
+		margin: 0 0 15px 0;
+	}
+	p {
+		text-transform: uppercase;
+		color:#8D8D8D;
+		letter-spacing: 0.215em;
+		font-size: 20px;
+		font-weight: 300;
+	}
+	.button {
+		margin-top: 60px;
 	}
 }

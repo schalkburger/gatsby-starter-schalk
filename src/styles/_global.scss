@@ -4,9 +4,26 @@ html, body {
 
 body {
 	background: #fff;
+	font-family: $font-family-primary;
 }
 
 a {
 	text-decoration: none;
 	color: #000;
+}
+
+.button {
+	background: #000;
+    max-width: 180px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: normal;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+	justify-content: center;
+	letter-spacing: 0.05em;
 }

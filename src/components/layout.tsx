@@ -1,6 +1,8 @@
 import { graphql, Link } from 'gatsby';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import 'typeface-italianno';
+import 'typeface-source-sans-pro';
 import '../../src/pages/index.scss';
 import Logo from './logo';
 
@@ -40,7 +42,7 @@ export default class Layout extends React.Component<LayoutProps, {}> {
                 </Helmet>
                 <div className="container header">
                     <header>
-                        <Logo />
+                        <a href="/"><Logo /></a>
                         <nav>
                             <Link to="/about">About</Link>
                             <Link to="/portfolio">Portfolio</Link>
