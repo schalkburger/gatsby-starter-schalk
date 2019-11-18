@@ -5,9 +5,6 @@ module.exports = {
       heading: `404 Page Not Found`,
       text: `The page you are looking for does not exist`,
     },
-    homePage: {
-      heroText: `“Breathtaking photography that you will remember for a lifetime”`,
-    },
   },
   plugins: [
     `gatsby-plugin-typescript`,
