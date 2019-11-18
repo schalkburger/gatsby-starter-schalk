@@ -10,17 +10,18 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-tslint`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images/`,
+      },
+    },
     {
       resolve: `gatsby-plugin-sass`,
       options: {
         useResolveUrlLoader: true,
-        cssLoaderOptions: {
-          camelCase: false,
-        },
-        // Override the file regex for SASS
-        sassRuleTest: /\.global\.s(a|c)ss$/,
-        // Override the file regex for CSS modules
-        sassRuleModulesTest: /\.mod\.s(a|c)ss$/,
       },
     },
   ],

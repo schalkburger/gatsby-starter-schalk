@@ -33,8 +33,8 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
     return (
       <div className="page home">
         <Layout {...this.props}>
-          <h1 className="name">{name}</h1>
-          <p>“Breathtaking photography that you will remember for a lifetime”</p>
+          <h1>“Breathtaking photography that you will remember for a lifetime”</h1>
+          <p>{name}</p>
         </Layout>
       </div>
     );
