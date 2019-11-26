@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import * as React from 'react';
-import '../../src/pages/index.scss';
 
 export default () => {
     const data = useStaticQuery(graphql`
@@ -22,6 +21,7 @@ export default () => {
             <Img
                 fixed={data.file.childImageSharp.fixed}
                 alt="Logo"
+                fadeIn={false}
             />
         </div>
     );

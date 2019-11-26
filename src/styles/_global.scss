@@ -12,6 +12,11 @@ a {
 	color: #000;
 }
 
+h1, h2, h3, h4, p, .button {
+    margin: 0;
+    padding: 0;
+}
+
 .button {
 	background: #000;
     max-width: 180px;
@@ -27,3 +32,4 @@ a {
 	justify-content: center;
 	letter-spacing: 0.05em;
 }
+

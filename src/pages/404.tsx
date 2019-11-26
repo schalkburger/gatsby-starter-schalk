@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import './index.scss';
+import '../styles/index.scss';
 
 interface NotFoundPageProps {
   data: {

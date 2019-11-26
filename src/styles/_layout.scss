@@ -1,5 +1,6 @@
 .layout {
-	padding: 0 40px;
+	padding: 0;
+	margin: 0;
 }
 
 .page {
@@ -23,10 +24,9 @@
 		justify-content: space-between;
 		align-items: center;
 		min-height: 150px;
-		margin-top: 30px;
 	}
 	nav {
-		min-width: 380px;
+		min-width: 480px;
 		display: flex;
 		justify-content: space-between;
 		a {
@@ -40,13 +40,16 @@
 
 .hero {
 	max-width: 900px;
-	margin: 40px auto 0 auto;
+	margin: 0 auto;
 	text-align: center;
+	display: flex;
+    flex-direction: column;
+	justify-content: space-evenly;
+	min-height: 450px;
 	h1 {
 		font-family: $font-family-secondary;
 		font-size: 85px;
 		font-weight: normal;
-		margin: 0 0 15px 0;
 	}
 	p {
 		text-transform: uppercase;
@@ -54,8 +57,5 @@
 		letter-spacing: 0.215em;
 		font-size: 20px;
 		font-weight: 300;
-	}
-	.button {
-		margin-top: 60px;
 	}
 }
