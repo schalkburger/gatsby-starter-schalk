@@ -4,7 +4,7 @@ import * as React from 'react';
 
 export default () => {
     const data = useStaticQuery(graphql`
-      query MyQuery {
+      query logoQuery {
         file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
             # Specify the image processing specifications right in the query.

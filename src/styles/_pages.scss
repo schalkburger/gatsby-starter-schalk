@@ -1,0 +1,30 @@
+// All Pages
+
+.page {
+    h2 {
+        margin-bottom: 20px;
+    }
+}
+
+// Home
+
+.index-page {
+	background: url('../images/penny-pace-home-background-gradient.jpg') no-repeat center center fixed;
+	background-size: cover;
+	overflow: hidden;
+}
+
+
+// About
+
+.about-page {
+    .content {
+        background: #f7f7f7;
+    }
+    .profile {
+        max-width: 400px;
+        padding: 10px;
+        background: #fff;
+        box-shadow: $box-shadow-default;
+    }
+}

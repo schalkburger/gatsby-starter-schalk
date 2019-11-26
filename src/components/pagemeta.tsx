@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet';
 
 interface PageMetaProps {
   title: string;
+  titleSeparator: string;
+  templateKey: string;
 }
 
 export const PageMeta = (props: PageMetaProps) => {
@@ -17,15 +19,13 @@ export const PageMeta = (props: PageMetaProps) => {
       }
     `);
   const name = data.site.siteMetadata.name;
-  const pageName = props.title.toLowerCase();
-  const pageClass = pageName.replace(/\s/g, '-').toLowerCase();
 
   return (
 
     <Helmet>
       <meta charSet="utf-8" />
-      <title>{props.title} - {name}</title>
-      <body className={pageClass} />
+      <title>{props.title} {props.titleSeparator} {name}</title>
+      <body className={props.templateKey} />
     </Helmet>
   );
 };

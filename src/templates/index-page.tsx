@@ -15,6 +15,7 @@ interface IndexPageTemplateProps {
     markdownRemark: {
       frontmatter: {
         title: string;
+        templateKey: string;
         hero: {
           heading: string;
         };
@@ -31,9 +32,9 @@ class IndexPageTemplate extends React.Component<IndexPageTemplateProps, {}> {
     const name = this.props.data.site.siteMetadata.name;
 
     return (
-      <Layout {...this.props}>
-        <PageMeta title={post.frontmatter.title} />
-        <div className="page index home">
+      <Layout {...this.props} hasFooter={false}>
+        <PageMeta title="" titleSeparator="" templateKey={post.frontmatter.templateKey} />
+        <div className="container page index home">
           <div className="hero">
             <h1>{post.frontmatter.hero.heading}</h1>
             <p>{name}</p>
@@ -52,11 +53,13 @@ export const indexPageQuery = graphql`
     site {
       siteMetadata {
         name
+        titleSeparator
       }
     },
     markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
       html
       frontmatter {
+        templateKey
         path
         title
         hero {

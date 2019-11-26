@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     name: `Penny Pace Photography`,
-
+    titleSeparator: `–`,
     notFoundPage: {
       heading: `404 Page Not Found`,
       text: `The page you are looking for does not exist`,

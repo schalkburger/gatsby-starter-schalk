@@ -1,0 +1,147 @@
+// Calculate rem
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+  }
+  
+  @mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+  }
+  
+  // Selection
+  
+  @mixin selection {
+    ::-moz-selection {
+      @content;
+    }
+  
+    ::-webkit-selection {
+      @content;
+    }
+  
+    ::selection {
+      @content;
+    }
+  }
+  
+  // Placeholder
+  
+  @mixin placeholder-color($color) {
+    &::-webkit-input-placeholder {
+      /* WebKit browsers */
+      color: $color;
+    }
+    &:-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      color: $color;
+    }
+    &::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      color: $color;
+    }
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10+ */
+      color: $color;
+    }
+  }
+  
+  // Custom unit breakpoint
+  // Usage example: @include breakpoint {}
+  @mixin breakpoint($breakpoint) {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+  
+  // Transition
+  
+  @mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }
+  
+  // Animations
+  
+  @mixin delay($args...) {
+    -webkit-animation-delay: $args;
+    animation-delay: $args;
+  }
+  
+// Grid
+  
+// breakpoints map
+$breakpoints: (
+  mobile: $mobile,
+  tablet: $tablet,
+  laptop: $laptop,
+  desktop: $desktop,
+  huge: $huge
+);
+
+// media query mixin
+@mixin break($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// number of columns variable
+$items: 12;
+
+// grid container
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.grid-items-have-gap {
+  .grid-item {
+    padding: 0 10px;
+  }
+  .button {
+    margin: 10px;
+  }
+}
+
+.grid-no-padding {
+  padding: 0 !important;
+}
+
+.grid-padding {
+  padding: 100px 0;
+}
+
+.grid-no-wrap {
+  @include breakpoint($laptop) {
+    flex-wrap: nowrap;
+  }
+}
+
+// grid item
+.grid-item {
+  padding: 0;
+}
+
+.grid-item-offset-1 {
+  margin-left: 0;
+  @include breakpoint($laptop) {
+    margin-left: 8.33333333%;
+  }
+}
+
+// loop over the breakpoints
+@each $key, $value in $breakpoints {
+  @for $i from 1 through $items {
+    .grid-item-#{$key}-#{$i} {
+      flex: 0 0 100%;
+      @include break($key) {
+        flex: 0 0 #{$i / $items * 100%};
+      }
+    }
+  }
+}
