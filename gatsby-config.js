@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     name: `Penny Pace Photography`,
-    titleSeparator: `–`,
+    description: `Breathtaking photography that you will remember for a lifetime`,
+    titleSeparator: ` – `,
     notFoundPage: {
       heading: `404 Page Not Found`,
       text: `The page you are looking for does not exist`,
