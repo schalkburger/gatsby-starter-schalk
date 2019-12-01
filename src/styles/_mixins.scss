@@ -96,7 +96,7 @@ $items: 12;
 // grid container
 .grid {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   @include breakpoint($laptop) {
     flex-flow: row wrap;
   }
@@ -117,6 +117,9 @@ $items: 12;
 
 .grid-padding {
   padding: 20px 0;
+  @include breakpoint($tablet) {
+    padding: 40px 0;
+  }
   @include breakpoint($laptop) {
     padding: 100px 0;
   }

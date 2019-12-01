@@ -74,5 +74,14 @@ module.exports = {
         useResolveUrlLoader: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.tsx`,
+        enableIdentityWidget: false,
+        publicPath: "admin",
+        htmlTitle: "NetlifyCMS",
+      },
+    },
   ],
 }

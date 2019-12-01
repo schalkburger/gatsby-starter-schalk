@@ -23,8 +23,16 @@ div[role="group"][tabindex] {
 		align-items: center;
 		padding: 20px 0;
 
+		@include breakpoint($tablet) {
+			flex-direction: row;
+			justify-content: center;
+			min-height: 150px;
+			padding: 0 0 40px 0;
+		}
+
 		@include breakpoint($laptop) {
 			flex-direction: row;
+			justify-content: space-between;
 			min-height: 150px;
 			padding: 0;
 		}
@@ -60,8 +68,14 @@ div[role="group"][tabindex] {
 	font-weight: 600;
 	letter-spacing: -2px;
 
+	@include breakpoint($tablet) {
+		@include font-size(20px);
+		margin-top: 50px;
+	}
+
 	@include breakpoint($laptop) {
 		@include font-size(16px);
+		margin: 0;
 	}
 }
 
@@ -81,6 +95,9 @@ div[role="group"][tabindex] {
 		@include font-size(40px);
 		font-weight: normal;
 		padding: 0 25px;
+		@include breakpoint($tablet) {
+			@include font-size(60px);
+		}
 		@include breakpoint($laptop) {
 			@include font-size(85px);
 			padding: 0;

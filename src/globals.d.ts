@@ -4,3 +4,4 @@ declare module '*.scss' {
 }
 
 declare module 'gatsby-plugin-cloudinary-image-gallery'
+declare module 'netlify-cms-app'
