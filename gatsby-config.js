@@ -2,8 +2,6 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-console.log('env test--->', process.env.CLOUD_NAME);
-
 module.exports = {
   siteMetadata: {
     name: `Penny Pace Photography`,

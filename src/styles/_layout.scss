@@ -34,6 +34,9 @@ div[role="group"][tabindex] {
 			&:hover {
 				opacity: 0.7;
 			}
+			&[aria-current="page"] {
+				font-weight: 400;
+			}
 		}
 	}
 }

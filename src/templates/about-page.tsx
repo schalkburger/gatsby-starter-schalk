@@ -72,7 +72,7 @@ query AboutPageTemplate {
   },
   profile: file(relativePath: {eq: "penny-pace.jpg"}) {
     childImageSharp {
-      fluid(maxWidth: 512) {
+      fluid(maxWidth: 512, grayscale: true) {
         ...GatsbyImageSharpFluid
       }
     }

@@ -46,6 +46,7 @@ class ContactPageTemplate extends React.Component<ContactPageTemplateProps, {}> 
                   <div><strong>Email:</strong> <p>{post.frontmatter.email}</p></div>
                   <div><strong>Phone:</strong> <p>{post.frontmatter.phone}</p></div>
                   <div><strong>Address:</strong> <p>{post.frontmatter.address}</p></div>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2960.216046098518!2d-88.00676898455184!3d42.102843579204944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fbb2857c0b105%3A0x63cc0cb3a38fc641!2s3255%20W%20Thomas%20St%2C%20Arlington%20Heights%2C%20IL%2060004%2C%20USA!5e0!3m2!1sen!2sza!4v1575181195149!5m2!1sen!2sza" width="100%" height="auto" />
                 </div>
               </div>
             </div>
