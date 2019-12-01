@@ -14,9 +14,7 @@ interface IndexPageTemplateProps {
       frontmatter: {
         title: string;
         templateKey: string;
-        hero: {
-          heading: string;
-        };
+        heroHeading: string;
       };
     };
   };
@@ -34,7 +32,7 @@ class IndexPageTemplate extends React.Component<IndexPageTemplateProps, {}> {
         <PageMeta title="" titleSeparator="" templateKey={post.frontmatter.templateKey} />
         <div className="container page index home">
           <div className="hero">
-            <h1>{post.frontmatter.hero.heading}</h1>
+            <h1>{post.frontmatter.heroHeading}</h1>
             <p>{name}</p>
             <a href="/contact" className="button">Contact Me</a>
           </div>
@@ -60,9 +58,7 @@ export const indexPageQuery = graphql`
         templateKey
         path
         title
-        hero {
-          heading
-        }
+        heroHeading
       }
     }
   }

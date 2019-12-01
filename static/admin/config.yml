@@ -8,6 +8,41 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
+  - name: home
+    label: Home
+    file: src/pages/index.md
+    extension: md
+    create: true
+    format: frontmatter
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Hero Heading", name: "heroHeading", widget: "string"}
+
+  - name: about
+    label: About
+    folder: src/pages/about
+    extension: md
+    create: true
+    format: frontmatter
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Heading", name: "heading", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+
+  - name: portfolio      
+    label: Portfolio
+    folder: src/pages/portfolio
+    extension: md
+    create: true
+    format: frontmatter
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+      - {label: "Title", name: "title", widget: "string"}
+
   - name: blog
     label: Blog
     folder: src/pages/blog
@@ -20,3 +55,18 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: contact
+    label: Contact
+    folder: src/pages/contact
+    extension: md
+    create: true
+    format: frontmatter
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Heading", name: "heading", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - {label: "Email", name: "email", widget: "string"}
+      - {label: "Phone", name: "phone", widget: "string"}
+      - {label: "Address", name: "address", widget: "string"}    
