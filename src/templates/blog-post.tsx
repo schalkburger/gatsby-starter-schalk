@@ -13,9 +13,11 @@ interface BlogPostTemplateProps {
     }
     markdownRemark: {
       id: string;
+      html: string;
       frontmatter: {
         title: string;
         templateKey: string;
+        date: string;
       };
     };
   };
@@ -31,9 +33,12 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps, {}> {
     return (
       <Layout {...this.props}>
         <PageMeta title={post.frontmatter.title} titleSeparator={separator} templateKey={post.frontmatter.templateKey} />
-        <div className="container page index home">
-          <h1>{post.frontmatter.title}</h1>
-          <p>Blog post content</p>
+        <div className="container page blog blog-single grid">
+          <article className="grid-item grid-item-tablet-12">
+            <h1>{post.frontmatter.title}</h1>
+            <span className="date">{post.frontmatter.date}</span>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          </article>
         </div>
       </Layout>
     );
@@ -52,9 +57,11 @@ query BlogPostByID($id: String) {
     },
   markdownRemark(id: { eq: $id }) {
     id
+    html
       frontmatter {
         templateKey
         title
+        date(formatString: "DD MMMM YYYY")
       }
     }
   }

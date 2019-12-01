@@ -1,7 +1,5 @@
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import React from 'react';
-import BlogRoll from '../components/blogroll';
 import Layout from '../components/layout';
 import { PageMeta } from '../components/pagemeta';
 

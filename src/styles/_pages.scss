@@ -28,3 +28,136 @@
         box-shadow: $box-shadow-default;
     }
 }
+
+// Portfolio
+
+.portfolio-gallery {
+    padding: 0 0 80px 0;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    .gallery-item {
+        @include transition(all 0.1s linear);
+        min-width: 460px;
+        min-height: 307px;
+        box-shadow: $box-shadow-default;
+        margin: 10px;
+        padding: 10px;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+// Blog
+
+.blogroll {
+    padding: 50px 0;
+    margin-bottom: 60px;
+}
+
+.blogroll-post {
+    box-shadow: $box-shadow-default;
+    padding: 40px;
+    margin: 20px;
+    h3 {
+        font-size: 30px;
+    }
+    p {
+        line-height: 1.6;
+    }
+    a {
+        font-weight: 700;
+    }
+    .date {
+        margin: 10px 0 20px 0;
+        display: block;
+        font-style: italic;
+        font-weight: 300;
+    }
+}
+
+.blog-single {
+    article {
+        box-shadow: $box-shadow-default;
+        padding: 60px;
+        margin-bottom: 60px;
+        h1 {
+            font-size: 40px;
+        }
+        p {
+            line-height: 2.2;
+        }
+        .date {
+            margin: 20px 0 20px 0;
+            display: block;
+            font-style: italic;
+            font-weight: 300;
+            font-size: 20px;
+        }
+    }
+}
+
+// Contact
+
+.contact-page {
+    .content {
+        background: #f7f7f7;
+    }
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    div {
+        padding: 20px 0;
+        margin-left: 10px;
+        text-transform: uppercase;
+        font-size: 25px;
+        font-weight: 300;
+        display: flex;
+        align-content: center;
+        strong, p {
+            padding: 0;
+            margin: 0;
+            min-width: 140px;
+            line-height: normal;
+        }
+        strong {
+            font-weight: 600;
+            font-size: 18px;
+        }
+    }
+}
+
+.contact-form-container {
+    background: #fff;
+    padding: 40px;
+    box-shadow: $box-shadow-default;
+    form {
+        display: flex;
+        flex-direction: column;
+        label {
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            font-weight: 700;
+            input, textarea {
+                margin: 20px 0;
+                min-height: 50px;
+                padding: 10px;
+                border: 1px solid #ccc;
+            }
+            textarea {
+                min-height: 200px;
+            }
+        }
+        button {
+            width: 100%;
+            max-width: 100%;
+            border: none;
+        }
+    }
+}

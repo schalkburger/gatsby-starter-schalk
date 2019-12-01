@@ -9,6 +9,7 @@ interface BlogRollProps {
       id: string;
       frontmatter: {
         title: string;
+        date: string;
       };
     };
   };
@@ -20,12 +21,14 @@ class BlogRoll extends React.Component<BlogRollProps, {}> {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
     return (
-      <div className="blogroll">
+      <div className="blogroll grid">
         {posts &&
           posts.map(({ node: post }) => (
-            <div key={post.id} className="blog-post">
-              <h4>{post.frontmatter.title}</h4>
+            <div key={post.id} className="blogroll-post grid-item grid-item-tablet-5">
+              <a href={post.fields.slug}><h3>{post.frontmatter.title}</h3></a>
+              <span className="date">{post.frontmatter.date}</span>
               <p>{post.excerpt}</p>
+              <a href={post.fields.slug}>Read more →</a>
             </div>
           ))}
       </div>
@@ -42,7 +45,7 @@ export default () => (
           ) {
             edges {
               node {
-                excerpt(pruneLength: 50)
+                excerpt(pruneLength: 100)
                 id
                 fields {
                   slug
@@ -50,6 +53,7 @@ export default () => (
                 frontmatter {
                   title
                   templateKey
+                  date(formatString: "DD MMMM YYYY")
                 }
               }
             }

@@ -53,7 +53,7 @@ export default class BlogIndexPage extends React.Component<BlogIndexPageProps, {
       <Layout {...this.props}>
         {/* tslint:disable-next-line: max-line-length */}
         <PageMeta title={title} titleSeparator={separator} templateKey={blogClass} />
-        <div className="blog">
+        <div className="container page blog">
           <BlogRoll />
         </div>
       </Layout>

@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import Layout from '../components/layout';
+import Gallery from '../components/gallery';
 import { PageMeta } from '../components/pagemeta';
 
 interface PortfolioPageTemplateProps {
@@ -31,8 +32,9 @@ class PortfolioPageTemplate extends React.Component<PortfolioPageTemplateProps, 
       <Layout {...this.props}>
         <PageMeta title={post.frontmatter.title} titleSeparator={separator} templateKey={post.frontmatter.templateKey} />
         <div className="container page portfolio">
-          <h1>{post.frontmatter.title}</h1>
-          <p>Portfolio page content</p>
+          <div className="portfolio-gallery">
+            <Gallery />
+          </div>
         </div>
       </Layout>
     );

@@ -35,7 +35,7 @@ export const PageMeta = (props: PageMetaProps) => {
       <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon} />
       <link rel="icon" type="image/png" sizes="16x16" href={appleTouchIcon16} />
       <link rel="icon" type="image/png" sizes="32x32" href={appleTouchIcon32} />
-      <link rel="shortcut icon" href={favicon} type="image/x-icon" />
+      <link rel="shortcut icon" type="image/x-icon" href={favicon} />
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
       <body className={props.templateKey} />

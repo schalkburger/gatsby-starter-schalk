@@ -2,6 +2,7 @@
 templateKey: 'blog-post'
 path: '/first-blog-post'
 title: 'First blog post'
+date: '2019-11-18T00:00:00.000Z'
 ---
 To shewing another demands to. Marianne property cheerful informed at striking at. Clothes parlors however by cottage on. In views it or meant drift to. Be concern parlors settled or do shyness address. Remainder northward performed out for moonlight. Yet late add name was rent park from rich. He always do do former he highly. 
 

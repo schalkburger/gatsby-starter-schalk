@@ -1,3 +1,9 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+console.log('env test--->', process.env.CLOUD_NAME);
+
 module.exports = {
   siteMetadata: {
     name: `Penny Pace Photography`,
@@ -25,6 +31,15 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-cloudinary`,
+      options: {
+        cloudName: `${process.env.CLOUD_NAME}`,
+        apiKey: `${process.env.CLOUD_API_KEY}`,
+        apiSecret: `${process.env.CLOUD_API_SECRET}`,
+        uploadFolder: 'uploads',
       },
     },
     {

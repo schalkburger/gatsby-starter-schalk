@@ -1,4 +1,5 @@
-import { graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
+import { globalHistory as history } from '@reach/router';
 import * as React from 'react';
 import 'typeface-italianno';
 import 'typeface-source-sans-pro';
@@ -7,13 +8,22 @@ import Logo from './logo';
 
 interface LayoutPageTemplateProps {
     hasFooter?: boolean;
+    data: {
+        site: {
+            siteMetadata: {
+                name: string;
+            };
+        },
+    };
 }
 
 export default class Layout extends React.Component<LayoutPageTemplateProps, {}> {
 
     public render() {
 
+        const { location } = history;
         const hasFooter = location.pathname === '/';
+        const name = this.props.data.site.siteMetadata.name;
 
         return (
 
@@ -38,7 +48,7 @@ export default class Layout extends React.Component<LayoutPageTemplateProps, {}>
                     <div className="footer">
                         <footer className="container footer">
                             <div className="footer-copy">
-                                <p>Copyright © 2019 Kirsten Noelle. All rights reserved</p>
+                                <p>Copyright © 2019 {name}. All rights reserved</p>
                             </div>
                             <nav>
                                 <Link to="/about">About</Link>
