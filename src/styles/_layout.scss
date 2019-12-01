@@ -21,7 +21,7 @@ div[role="group"][tabindex] {
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
-		padding-top: 40px;
+		padding: 20px 0;
 
 		@include breakpoint($laptop) {
 			flex-direction: row;
@@ -103,17 +103,32 @@ div[role="group"][tabindex] {
 	width: 100%;
 	min-height: 100px;
 	background: #000;
+	padding: 15px 25px;
+	text-align: center;
+	@include breakpoint($laptop) {
+		padding: 0;
+		text-align: left;
+	}
 	footer {
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
+		@include breakpoint($laptop) {
+			flex-direction: row;
+		}
 		p, a {
 			color: #fff;
+			line-height: 1.6;
 		}
 		nav {
 			min-width: 350px;
-			display: flex;
 			justify-content: space-between;
+			display: none;
+			@include breakpoint($laptop) {
+				display: flex;
+				flex-direction: row;
+			}
 			a {
 				@include font-size(16px);
 				font-weight: 300;

@@ -11,7 +11,16 @@
 .index-page {
 	background: url('../images/penny-pace-home-background-gradient.jpg') no-repeat center center fixed;
 	background-size: cover;
-	overflow: hidden;
+    overflow: hidden;
+    
+    .header {
+        header {
+            padding-top: 40px;
+            @include breakpoint($laptop) {
+                padding: 0;
+            }
+        }
+    }
 }
 
 
@@ -20,13 +29,19 @@
 .about-page {
     .content {
         background: #f7f7f7;
-    }
+}
     .profile {
-        max-width: 400px;
         padding: 10px;
         background: #fff;
         box-shadow: $box-shadow-default;
-    }
+        max-width: 80%;
+        margin: 0 auto;
+        margin-bottom: 60px;
+            @include breakpoint($laptop) {
+                margin: 0;
+                max-width: 400px;
+            }
+        }
 }
 
 // Portfolio
@@ -40,11 +55,15 @@
     flex-flow: row wrap;
     .gallery-item {
         @include transition(all 0.1s linear);
-        min-width: 460px;
-        min-height: 307px;
+        min-width: 90%;
+        min-height: auto;
         box-shadow: $box-shadow-default;
-        margin: 10px;
+        margin: 10px auto;
         padding: 10px;
+        @include breakpoint($laptop) {
+            min-width: 460px;
+            min-height: 307px;
+        }
         &:hover {
             opacity: 0.8;
         }
@@ -54,14 +73,22 @@
 // Blog
 
 .blogroll {
-    padding: 50px 0;
+    padding: 0;
     margin-bottom: 60px;
+    @include breakpoint($laptop) {
+        padding: 50px 0;
+    }
 }
 
 .blogroll-post {
     box-shadow: $box-shadow-default;
     padding: 40px;
-    margin: 20px;
+    margin: 10px 30px;
+    flex: 0 1 auto;
+    @include breakpoint($laptop) {
+        margin: 20px;
+        flex: 0 0 41.66667%;
+    }
     h3 {
         @include font-size(30px);
     }
@@ -114,20 +141,32 @@
     div {
         padding: 20px 0;
         margin-left: 10px;
-        text-transform: uppercase;
         @include font-size(25px);
-        font-weight: 300;
-        display: flex;
+        font-weight: 300;        
+        display: flex;        
+        flex-direction: column;
         align-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0;
+        @include breakpoint($laptop) {
+            flex-direction: row;
+        }
         strong, p {
             padding: 0;
             margin: 0;
             min-width: 140px;
             line-height: normal;
+            max-width: 80%;
         }
         strong {
             font-weight: 600;
             @include font-size(18px);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            @include breakpoint($laptop) {
+                margin: 0;
+            }
         }
     }
 }

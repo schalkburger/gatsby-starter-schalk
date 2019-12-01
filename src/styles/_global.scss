@@ -35,9 +35,12 @@ h1, h2, h3, h4, p, .button {
 }
 
 h2 {
-    @include font-size(40px);
+    @include font-size(30px);
     text-transform: uppercase;
     font-weight: 400;
+    @include breakpoint($laptop) {
+        @include font-size(40px);
+    }
 }
 
 p {
@@ -83,4 +86,8 @@ iframe {
     background: #fff;
     padding: 10px;
     margin-top: 40px;
+    @include breakpoint($laptop) {
+        min-height: 450px;
+        max-width: 600px;
+    }
 }

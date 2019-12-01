@@ -96,7 +96,10 @@ $items: 12;
 // grid container
 .grid {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
+  @include breakpoint($laptop) {
+    flex-flow: row wrap;
+  }
 }
 
 .grid-items-have-gap {
@@ -113,7 +116,10 @@ $items: 12;
 }
 
 .grid-padding {
-  padding: 100px 0;
+  padding: 20px 0;
+  @include breakpoint($laptop) {
+    padding: 100px 0;
+  }
 }
 
 .grid-no-wrap {
@@ -124,7 +130,12 @@ $items: 12;
 
 // grid item
 .grid-item {
-  padding: 0;
+  padding: 0 25px;
+  text-align: center;
+  @include breakpoint($laptop) {
+    text-align: left;
+    padding: 0;
+  }
 }
 
 .grid-item-offset-1 {

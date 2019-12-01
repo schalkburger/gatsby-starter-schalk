@@ -24,7 +24,7 @@ class BlogRoll extends React.Component<BlogRollProps, {}> {
       <div className="blogroll grid">
         {posts &&
           posts.map(({ node: post }) => (
-            <div key={post.id} className="blogroll-post grid-item grid-item-tablet-5">
+            <div key={post.id} className="blogroll-post grid-item grid-item-desktop-5 ">
               <a href={post.fields.slug}><h3>{post.frontmatter.title}</h3></a>
               <span className="date">{post.frontmatter.date}</span>
               <p>{post.excerpt}</p>
