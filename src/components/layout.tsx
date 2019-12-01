@@ -4,8 +4,6 @@ import * as React from 'react';
 import 'typeface-italianno';
 import 'typeface-source-sans-pro';
 import '../styles/index.scss';
-import Logo from './logo';
-
 interface LayoutPageTemplateProps {
     hasFooter?: boolean;
     data: {
@@ -31,7 +29,7 @@ export default class Layout extends React.Component<LayoutPageTemplateProps, {}>
                 <div className="layout">
                     <div className="header">
                         <header className="container header">
-                            <a href="/"><Logo /></a>
+                            <a href="/" className="logo"><h1>{name}</h1></a>
                             <nav>
                                 <Link to="/about">About</Link>
                                 <Link to="/portfolio">Portfolio</Link>
