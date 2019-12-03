@@ -4,20 +4,19 @@ backend:
   branch: site
 
 display_url: http://localhost:8000
-media_folder: static/assets
-public_folder: assets
+media_folder: static/images
+public_folder: images
 
 collections:
   - name: home
     label: Home
-    file: src/pages/index.md
+    folder: src/pages
     extension: md
     create: true
     format: frontmatter
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Hero Heading", name: "heroHeading", widget: "string"}
 
   - name: about
@@ -28,10 +27,10 @@ collections:
     format: frontmatter
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+      - {label: "Photo", name: "image", widget: "image"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Heading", name: "heading", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Subtitle", name: "subtitle", widget: "string"}
 
   - name: portfolio      
     label: Portfolio

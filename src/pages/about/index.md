@@ -1,6 +1,7 @@
 ---
 templateKey: 'about-page'
 path: /about
+image: /images/penny-pace.jpg
 title: About Me
 heading: Nice to meet you
 ---

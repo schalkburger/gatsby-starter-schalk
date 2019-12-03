@@ -15,6 +15,7 @@ interface AboutPageTemplateProps {
     markdownRemark: {
       html: string;
       frontmatter: {
+        image: any;
         title: string;
         templateKey: string;
         heading: string;
@@ -38,7 +39,8 @@ class AboutPageTemplate extends React.Component<AboutPageTemplateProps, {}> {
           <section className="grid grid-padding">
             <div className="grid-item grid-item-tablet-4">
               <div className="profile">
-                <Img fluid={data.profile.childImageSharp.fluid} alt="Penny Pace" />
+                <Img fluid={post.frontmatter.image.childImageSharp.fluid} alt="Penny Pace" />
+                {/* <img src={post.frontmatter.image} /> */}
               </div>
             </div>
             <div className="grid-item grid-item-tablet-6">
@@ -66,16 +68,16 @@ query AboutPageTemplate {
     frontmatter {
       templateKey
       path
+      image {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+      }
       title
       heading
     }
   },
-  profile: file(relativePath: {eq: "penny-pace.jpg"}) {
-    childImageSharp {
-      fluid(maxWidth: 512, grayscale: true) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
   }
 `;
