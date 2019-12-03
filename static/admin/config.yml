@@ -3,7 +3,7 @@ backend:
   repo: schalkburger/gatsby-starter-schalk
   branch: site
 
-display_url: http://localhost:8000
+display_url: https://gatsby-starter-schalk.netlify.com
 media_folder: static/images
 public_folder: images
 
