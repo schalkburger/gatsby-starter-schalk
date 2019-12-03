@@ -39,8 +39,8 @@ class AboutPageTemplate extends React.Component<AboutPageTemplateProps, {}> {
           <section className="grid grid-padding">
             <div className="grid-item grid-item-tablet-4">
               <div className="profile">
-                <Img fluid={post.frontmatter.image.childImageSharp.fluid} alt="Penny Pace" />
-                {/* <img src={post.frontmatter.image} /> */}
+                {/* <Img fluid={post.frontmatter.image.fluid} alt="Penny Pace" /> */}
+                <img src={post.frontmatter.image} />
               </div>
             </div>
             <div className="grid-item grid-item-tablet-6">
@@ -68,13 +68,7 @@ query AboutPageTemplate {
     frontmatter {
       templateKey
       path
-      image {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-      }
+      image
       title
       heading
     }

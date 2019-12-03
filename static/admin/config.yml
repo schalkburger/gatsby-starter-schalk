@@ -5,7 +5,7 @@ backend:
 
 display_url: https://gatsby-starter-schalk.netlify.com
 media_folder: static/images
-public_folder: images
+public_folder: /images
 
 collections:
   - name: home
