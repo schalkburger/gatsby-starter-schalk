@@ -1,7 +1,6 @@
 ---
-templateKey: 'about-page'
-path: /about
-image: /images/penny-pace.jpg
+templateKey: about-page
+image: /images/penny-pace-home-background-gradient.jpg
 title: About Me
 heading: Nice to meet you
 ---
