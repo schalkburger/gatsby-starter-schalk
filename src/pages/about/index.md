@@ -1,9 +1,8 @@
 ---
-templateKey: 'about-page'
-path: /about
-image: /images/penny-pace.jpg
+templateKey: about-page
+image: /images/penny-pace-home-background-gradient.jpg
 title: About Me
-heading: Nice to meet you
+heading: Learn more about me
 ---
 Skateboarder, tattoo addict, drummer, vintage furniture lover and communicator, collector, connector, creator. Performing at the sweet spot between beauty and programing to craft experiences that go beyond design. I work with Fortune 500 companies and startups.
 
