@@ -13,14 +13,24 @@ Install this starter by running this from your [Gatsby CLI](https://next.gatsbyj
 gatsby new gatsby-site https://github.com/schalkburger/gatsby-starter-schalk
 ```
 
-## Start development server
+### Start development server
 
 `gatsby develop`
 
-## Create a production build
+### Create a production build
 
 `gatsby build`
 
-## Serve the production build locally
+### Serve the production build locally
 
 `gatsby serve`
+
+## Demo site
+
+View a demo site I built using this starter on Netlify:
+
+[https://gatsby-starter-schalk.netlify.com/](https://gatsby-starter-schalk.netlify.com/)
+
+You can view the source of the demo site on the following branch:
+
+[https://github.com/schalkburger/gatsby-starter-schalk/tree/site](https://github.com/schalkburger/gatsby-starter-schalk/tree/site)
