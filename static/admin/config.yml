@@ -4,8 +4,8 @@ backend:
   branch: site
 
 display_url: https://gatsby-starter-schalk.netlify.com
-media_folder: static/images
-public_folder: /images
+media_folder: static/assets
+public_folder: /assets
 
 collections:
   - name: home
