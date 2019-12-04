@@ -156,6 +156,7 @@
         margin: 0;
         @include breakpoint($laptop) {
             flex-direction: row;
+            margin: 10px 0;
         }
         strong, p {
             padding: 0;
