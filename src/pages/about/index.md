@@ -1,6 +1,7 @@
 ---
 templateKey: about-page
-image: /images/penny-pace-grayscale.jpg
+path: /about
+image: images/penny-pace-grayscale.jpg
 title: About Me
 heading: Learn more about me
 ---

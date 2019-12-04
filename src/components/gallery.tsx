@@ -19,9 +19,11 @@ class Gallery extends React.Component<GalleryProps, {}> {
     return (
       <div className="gallery">
         {images &&
-          images.map(({ childCloudinaryAsset: image }) => (
+          images.map(({ childImageSharp: image }) => (
             <div key={image.id} className="gallery-item">
-              <a href={image.fluid.src} target="_blank"><Img fluid={image.fluid} /></a>
+              <a href={image.fluid.src} target="_blank">
+                <Img fluid={image.fluid} />
+              </a>
             </div>
           ))}
       </div>
@@ -33,17 +35,13 @@ export default () => (
     query={graphql`
     query galleryQuery {
       allFile(filter: {absolutePath: {regex: "/portfolio-photo/"}}, sort: {fields: name, order: ASC}) {
-          nodes {
-            childCloudinaryAsset {
-              fluid(maxWidth: 460) {
-                src
-                aspectRatio
-                srcSet
-                sizes
-              }
-              id
+        nodes {
+          childImageSharp {
+            fluid(maxWidth: 460) {
+              ...GatsbyImageSharpFluid
             }
           }
+        }
       }
     }
       `}

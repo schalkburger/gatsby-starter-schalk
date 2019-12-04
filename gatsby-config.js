@@ -13,23 +13,18 @@ module.exports = {
     },
   },
   plugins: [
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-tslint`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/images/`,
-        name: 'uploads',
+        path: `${__dirname}/static/assets/`,
+        name: `images`
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/images/`,
+        name: 'images',
       },
     },
     {
@@ -39,43 +34,26 @@ module.exports = {
         path: `${__dirname}/src/pages`,
       },
     },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-transformer-cloudinary`,
-      options: {
-        cloudName: `${process.env.CLOUD_NAME}`,
-        apiKey: `${process.env.CLOUD_API_KEY}`,
-        apiSecret: `${process.env.CLOUD_API_SECRET}`,
-        uploadFolder: 'uploads',
-      },
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          'gatsby-remark-relative-images',
+          `gatsby-plugin-netlify-cms-paths`,
           {
-            resolve: 'gatsby-remark-relative-images',
+            resolve: `gatsby-remark-images`,
             options: {
-              name: 'uploads',
-            },
-          },
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 2048,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: {
-              destinationDir: 'static',
+              maxWidth: 590,
             },
           },
         ],
       },
     },
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-tslint`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
