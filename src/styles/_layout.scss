@@ -18,14 +18,15 @@ div[role='group'][tabindex] {
 .header {
   header {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    padding: 20px 0;
+    padding: 0;
+    min-height: 92px;
+    margin-left: 30px;
+    margin-top: 10px;
 
     @include breakpoint($tablet) {
-      flex-direction: row;
-      justify-content: center;
       min-height: 150px;
     }
 
@@ -40,12 +41,11 @@ div[role='group'][tabindex] {
     }
   }
   nav {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     @include breakpoint($laptop) {
-      display: flex;
       flex-direction: row;
       min-width: 480px;
     }
@@ -66,12 +66,16 @@ div[role='group'][tabindex] {
 
 .logo {
   h1 {
-    @include font-size(32px);
+    @include font-size(28px);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: -2px;
-    text-align: center;
-    padding: 0 15px;
+    text-align: left;
+    max-width: 200px;
+
+    @include breakpoint(425px) {
+      max-width: 100%;
+    }
 
     @include breakpoint($mobile) {
       text-align: left;
@@ -80,6 +84,7 @@ div[role='group'][tabindex] {
 
     @include breakpoint($tablet) {
       @include font-size(30px);
+      padding: 0 15px;
     }
 
     @include breakpoint($laptop) {
@@ -87,6 +92,77 @@ div[role='group'][tabindex] {
       margin: 0;
     }
   }
+}
+
+.mobile-menu-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 20px;
+  top: 46px;
+
+  @include breakpoint(425px) {
+    top: 42px;
+  }
+
+  @include breakpoint($tablet) {
+    top: 69px;
+    right: 40px;
+  }
+}
+
+.bm-burger-bars {
+  background: #000;
+}
+
+.bm-burger-bars-hover {
+  background: #000;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+.bm-menu {
+  background: #000;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.bm-morph-shape {
+  fill: #000;
+}
+
+nav.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+  justify-content: flex-start;
+}
+
+.bm-item {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .hero {

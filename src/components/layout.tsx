@@ -1,6 +1,8 @@
 import { Link } from 'gatsby';
 import { globalHistory as history } from '@reach/router';
 import * as React from 'react';
+import MediaQuery from 'react-responsive';
+import { slide as Menu } from 'react-burger-menu';
 import 'typeface-italianno';
 import 'typeface-source-sans-pro';
 import '../styles/index.scss';
@@ -15,14 +17,30 @@ interface LayoutPageTemplateProps {
   };
 }
 
+interface LayoutPageTemplateState {
+  menuOpen: boolean;
+}
+
 export default class Layout extends React.Component<
   LayoutPageTemplateProps,
-  {}
+  LayoutPageTemplateState
 > {
   public render() {
     const { location } = history;
     const hasFooter = location.pathname === '/';
     const name = this.props.data.site.siteMetadata.name;
+
+    this.state = {
+      menuOpen: false,
+    };
+
+    const handleStateChange = (state: { isOpen: boolean }) => {
+      this.setState({ menuOpen: state.isOpen });
+    };
+
+    const closeMenu = () => {
+      this.setState({ menuOpen: false });
+    };
 
     return (
       <>
@@ -32,12 +50,43 @@ export default class Layout extends React.Component<
               <a href='/' className='logo'>
                 <h1>{name}</h1>
               </a>
-              <nav>
-                <Link to='/about'>About</Link>
-                <Link to='/portfolio'>Portfolio</Link>
-                <Link to='/blog'>Blog</Link>
-                <Link to='/contact'>Contact</Link>
-              </nav>
+              <MediaQuery maxDeviceWidth={992}>
+                <div id='outer-container' className='mobile-menu-container'>
+                  <Menu
+                    disableAutoFocus={true}
+                    isOpen={false}
+                    // tslint:disable-next-line: jsx-no-lambda
+                    onStateChange={(state) => handleStateChange(state)}
+                    right={true}
+                    outerContainerId={'outer-container'}
+                  >
+                    {/* tslint:disable-next-line: jsx-no-lambda */}
+                    <Link className='menu-item' to='/'>
+                      Home
+                    </Link>
+                    <Link className='menu-item' to='/about'>
+                      About
+                    </Link>
+                    <Link className='menu-item' to='/portfolio'>
+                      Portfolio
+                    </Link>
+                    <Link className='menu-item' to='/blog'>
+                      Blog
+                    </Link>
+                    <Link className='menu-item' to='/contact'>
+                      Contact
+                    </Link>
+                  </Menu>
+                </div>
+              </MediaQuery>
+              <MediaQuery minDeviceWidth={992}>
+                <nav>
+                  <Link to='/about'>About</Link>
+                  <Link to='/portfolio'>Portfolio</Link>
+                  <Link to='/blog'>Blog</Link>
+                  <Link to='/contact'>Contact</Link>
+                </nav>
+              </MediaQuery>
             </header>
           </div>
           <div className='content'>{this.props.children}</div>
