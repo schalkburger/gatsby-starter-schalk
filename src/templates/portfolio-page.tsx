@@ -11,7 +11,7 @@ interface PortfolioPageTemplateProps {
         name: string;
         titleSeparator: string;
       };
-    }
+    };
     markdownRemark: {
       frontmatter: {
         title: string;
@@ -21,18 +21,23 @@ interface PortfolioPageTemplateProps {
   };
 }
 
-class PortfolioPageTemplate extends React.Component<PortfolioPageTemplateProps, {}> {
-
+class PortfolioPageTemplate extends React.Component<
+  PortfolioPageTemplateProps,
+  {}
+> {
   public render() {
-
     const post = this.props.data.markdownRemark;
     const separator = this.props.data.site.siteMetadata.titleSeparator;
 
     return (
       <Layout {...this.props}>
-        <PageMeta title={post.frontmatter.title} titleSeparator={separator} templateKey={post.frontmatter.templateKey} />
-        <div className="container page portfolio">
-          <div className="portfolio-gallery">
+        <PageMeta
+          title={post.frontmatter.title}
+          titleSeparator={separator}
+          templateKey={post.frontmatter.templateKey}
+        />
+        <div className='container page portfolio'>
+          <div className='portfolio-gallery'>
             <Gallery />
           </div>
         </div>
@@ -50,8 +55,8 @@ export const portfolioPageQuery = graphql`
         name
         titleSeparator
       }
-    },
-    markdownRemark(frontmatter: {templateKey: {eq: "portfolio-page"}}) {
+    }
+    markdownRemark(frontmatter: { templateKey: { eq: "portfolio-page" } }) {
       html
       frontmatter {
         templateKey

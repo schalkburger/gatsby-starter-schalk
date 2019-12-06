@@ -4,13 +4,15 @@
   box-sizing: border-box;
 }
 
-html, body {
-	height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 body {
-	background: #fff;
-    font-family: $font-family-primary;
+  background: #fff;
+  font-family: $font-family-primary;
+  min-width: 320px;
 }
 
 input,
@@ -24,71 +26,123 @@ textarea {
 }
 
 a {
-	text-decoration: none;
-    color: #000;
-    @include transition(all 0.1s linear);
+  text-decoration: none;
+  color: #000;
+  @include transition(all 0.1s linear);
 }
 
-h1, h2, h3, h4, p, .button {
-    margin: 0;
-    padding: 0;
+h1,
+h2,
+h3,
+h4,
+p,
+.button {
+  margin: 0;
+  padding: 0;
 }
 
 h2 {
-    @include font-size(30px);
-    text-transform: uppercase;
-    font-weight: 400;
-    @include breakpoint($laptop) {
-        @include font-size(40px);
-    }
+  @include font-size(30px);
+  text-transform: uppercase;
+  font-weight: 400;
+  @include breakpoint($laptop) {
+    @include font-size(40px);
+  }
 }
 
 p {
-    line-height: 2.2;
-    padding: 0 0 15px 0;
-    @include font-size(18px);
+  line-height: 2.2;
+  padding: 0 0 15px 0;
+  @include font-size(18px);
 }
 
-ul, ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .button {
-    @include transition(all 0.1s linear);
-	background: #000;
-    max-width: 180px;
-    margin: 0 auto;
-    padding: 15px 20px;
-    text-transform: uppercase;
-    color: #fff;
-    font-weight: normal;
-    @include font-size(20px);
-    display: flex;
-    align-items: center;
-    text-align: justify;
-	justify-content: center;
-    letter-spacing: 0.05em;
-    position: relative;
-    &:hover {
-        opacity: 0.7;
-    }
-    &:active, &:focus {
-        top: 1px;
-    }
+  @include transition(all 0.1s linear);
+  background: #000;
+  max-width: 180px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: normal;
+  @include font-size(20px);
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  justify-content: center;
+  letter-spacing: 0.05em;
+  position: relative;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active,
+  &:focus {
+    top: 1px;
+  }
 }
 
 iframe {
+  min-height: 450px;
+  max-width: 100%;
+  border: none;
+  background: #fff;
+  padding: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  @include breakpoint($laptop) {
     min-height: 450px;
-    max-width: 100%;
-    border: none;
-    background: #fff;
-    padding: 10px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    @include breakpoint($laptop) {
-        min-height: 450px;
-        max-width: 600px;
-    }
+    max-width: 600px;
+  }
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated.delay-1s {
+  animation-delay: 1s;
+}
+
+.animated.delay-500ms {
+  animation-delay: 0.5s;
+}
+
+@media (print), (prefers-reduced-motion: reduce) {
+  .animated {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
 }

@@ -11,8 +11,8 @@ interface BlogIndexPageProps {
       siteMetadata: {
         name: string;
         titleSeparator: string;
-      },
-    },
+      };
+    };
     markdownRemark: {
       frontmatter: {
         title: string;
@@ -30,8 +30,8 @@ export const BlogIndexPageQuery = graphql`
         name
         titleSeparator
       }
-    },
-    markdownRemark(frontmatter: {templateKey: {eq: "blog-post"}}) {
+    }
+    markdownRemark(frontmatter: { templateKey: { eq: "blog-post" } }) {
       frontmatter {
         templateKey
         path
@@ -41,10 +41,11 @@ export const BlogIndexPageQuery = graphql`
   }
 `;
 
-export default class BlogIndexPage extends React.Component<BlogIndexPageProps, {}> {
-
+export default class BlogIndexPage extends React.Component<
+  BlogIndexPageProps,
+  {}
+> {
   public render() {
-
     const title = 'Blog';
     const blogClass = 'blog-page';
     const separator = this.props.data.site.siteMetadata.titleSeparator;
@@ -52,8 +53,12 @@ export default class BlogIndexPage extends React.Component<BlogIndexPageProps, {
     return (
       <Layout {...this.props}>
         {/* tslint:disable-next-line: max-line-length */}
-        <PageMeta title={title} titleSeparator={separator} templateKey={blogClass} />
-        <div className="container page blog">
+        <PageMeta
+          title={title}
+          titleSeparator={separator}
+          templateKey={blogClass}
+        />
+        <div className='container page blog'>
           <BlogRoll />
         </div>
       </Layout>

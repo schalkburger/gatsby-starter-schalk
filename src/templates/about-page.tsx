@@ -11,7 +11,7 @@ interface AboutPageTemplateProps {
         name: string;
         titleSeparator: string;
       };
-    }
+    };
     markdownRemark: {
       html: string;
       frontmatter: {
@@ -26,23 +26,28 @@ interface AboutPageTemplateProps {
 
 class AboutPageTemplate extends React.Component<AboutPageTemplateProps, {}> {
   public render() {
-
     const post = this.props.data.markdownRemark;
     const separator = this.props.data.site.siteMetadata.titleSeparator;
     const data = this.props.data;
 
     return (
       <Layout {...this.props}>
-        <PageMeta title={post.frontmatter.title} titleSeparator={separator} templateKey={post.frontmatter.templateKey} />
-        <div className="container page about">
-          <section className="grid grid-padding">
-            <div className="grid-item grid-item-tablet-4">
-              <div className="profile">
-                <Img fluid={post.frontmatter.image.childImageSharp.fluid} alt="Penny Pace" />
-                {/* <img src={post.frontmatter.image} /> */}
+        <PageMeta
+          title={post.frontmatter.title}
+          titleSeparator={separator}
+          templateKey={post.frontmatter.templateKey}
+        />
+        <div className='container page about'>
+          <section className='grid grid-padding'>
+            <div className='grid-item grid-item-tablet-4'>
+              <div className='profile'>
+                <Img
+                  fluid={post.frontmatter.image.childImageSharp.fluid}
+                  alt={data.site.siteMetadata.name}
+                />
               </div>
             </div>
-            <div className="grid-item grid-item-tablet-6">
+            <div className='grid-item grid-item-tablet-6'>
               <h2>{post.frontmatter.heading}</h2>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
@@ -55,14 +60,14 @@ class AboutPageTemplate extends React.Component<AboutPageTemplateProps, {}> {
 export default AboutPageTemplate;
 
 export const AboutPageQuery = graphql`
-query AboutPageTemplate {
+  query AboutPageTemplate {
     site {
-    siteMetadata {
-      name
-      titleSeparator
+      siteMetadata {
+        name
+        titleSeparator
+      }
     }
-  },
-  markdownRemark(frontmatter: {templateKey: {eq: "about-page"}}) {
+    markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
       html
       frontmatter {
         templateKey
@@ -77,6 +82,6 @@ query AboutPageTemplate {
         title
         heading
       }
-    },
+    }
   }
 `;

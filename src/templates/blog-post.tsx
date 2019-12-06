@@ -10,7 +10,7 @@ interface BlogPostTemplateProps {
         name: string;
         titleSeparator: string;
       };
-    }
+    };
     markdownRemark: {
       id: string;
       html: string;
@@ -24,19 +24,21 @@ interface BlogPostTemplateProps {
 }
 
 class BlogPostTemplate extends React.Component<BlogPostTemplateProps, {}> {
-
   public render() {
-
     const post = this.props.data.markdownRemark;
     const separator = this.props.data.site.siteMetadata.titleSeparator;
 
     return (
       <Layout {...this.props}>
-        <PageMeta title={post.frontmatter.title} titleSeparator={separator} templateKey={post.frontmatter.templateKey} />
-        <div className="container page blog blog-single grid">
-          <article className="grid-item grid-item-tablet-12">
+        <PageMeta
+          title={post.frontmatter.title}
+          titleSeparator={separator}
+          templateKey={post.frontmatter.templateKey}
+        />
+        <div className='container page blog blog-single grid'>
+          <article className='grid-item grid-item-tablet-12'>
             <h1>{post.frontmatter.title}</h1>
-            <span className="date">{post.frontmatter.date}</span>
+            <span className='date'>{post.frontmatter.date}</span>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
           </article>
         </div>
@@ -48,16 +50,16 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps, {}> {
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-query BlogPostByID($id: String) {
-  site {
+  query BlogPostByID($id: String) {
+    site {
       siteMetadata {
         name
         titleSeparator
       }
-    },
-  markdownRemark(id: { eq: $id }) {
-    id
-    html
+    }
+    markdownRemark(id: { eq: $id }) {
+      id
+      html
       frontmatter {
         templateKey
         title

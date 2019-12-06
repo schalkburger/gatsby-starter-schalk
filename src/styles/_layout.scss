@@ -1,160 +1,178 @@
-div[role="group"][tabindex] {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+div[role='group'][tabindex] {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .layout {
-	padding: 0;
-	margin: 0;
-	flex: 1;
+  padding: 0;
+  margin: 0;
+  flex: 1;
 }
 
 .container {
-	max-width: $huge;
-	margin: 0 auto;
+  max-width: $huge;
+  margin: 0 auto;
 }
 
 .header {
-	header {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		padding: 20px 0;
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
 
-		@include breakpoint($tablet) {
-			flex-direction: row;
-			justify-content: center;
-			min-height: 150px;
-			padding: 0 0 40px 0;
-		}
+    @include breakpoint($tablet) {
+      flex-direction: row;
+      justify-content: center;
+      min-height: 150px;
+    }
 
-		@include breakpoint($laptop) {
-			flex-direction: row;
-			justify-content: space-between;
-			min-height: 150px;
-			padding: 0;
-		}
-	}
-	nav {
-		display: none;
-		flex-direction: column;
-		justify-content: space-between;
+    @include breakpoint($laptop) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
 
-		@include breakpoint($laptop) {
-			display: flex;
-			flex-direction: row;
-			min-width: 480px;
-		}
-		a {
-			text-transform: uppercase;
-			@include font-size(24px);
-			font-weight: 300;
-			letter-spacing: 0.06em;
-			&:hover {
-				opacity: 0.7;
-			}
-			&[aria-current="page"] {
-				font-weight: 400;
-			}
-		}
-	}
+    @include breakpoint($huge) {
+      padding: 0;
+    }
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include breakpoint($laptop) {
+      display: flex;
+      flex-direction: row;
+      min-width: 480px;
+    }
+    a {
+      text-transform: uppercase;
+      @include font-size(24px);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      &:hover {
+        opacity: 0.7;
+      }
+      &[aria-current='page'] {
+        font-weight: 400;
+      }
+    }
+  }
 }
 
 .logo {
-	@include font-size(14px);
-	text-transform: uppercase;
-	font-weight: 600;
-	letter-spacing: -2px;
+  h1 {
+    @include font-size(32px);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -2px;
+    text-align: center;
+    padding: 0 15px;
 
-	@include breakpoint($tablet) {
-		@include font-size(20px);
-		margin-top: 50px;
-	}
+    @include breakpoint($mobile) {
+      text-align: left;
+      padding: 0;
+    }
 
-	@include breakpoint($laptop) {
-		@include font-size(16px);
-		margin: 0;
-	}
+    @include breakpoint($tablet) {
+      @include font-size(30px);
+    }
+
+    @include breakpoint($laptop) {
+      @include font-size(32px);
+      margin: 0;
+    }
+  }
 }
 
 .hero {
-	max-width: 900px;
-	margin: 0 auto;
-	text-align: center;
-	display: flex;
-    flex-direction: column;
-	justify-content: space-evenly;
-	min-height: 350px;
-	@include breakpoint($laptop) {
-		min-height: 450px;
-	}
-	h1 {
-		font-family: $font-family-secondary;
-		@include font-size(40px);
-		font-weight: normal;
-		padding: 0 25px;
-		@include breakpoint($tablet) {
-			@include font-size(60px);
-		}
-		@include breakpoint($laptop) {
-			@include font-size(85px);
-			padding: 0;
-		}
-	}
-	p {
-		display: none;
-		text-transform: uppercase;
-		color:#8D8D8D;
-		letter-spacing: 0.215em;
-		@include font-size(20px);
-		font-weight: 300;
-		@include breakpoint($laptop) {
-			display: block;
-		}
-	}
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 350px;
+  @include breakpoint($tablet) {
+    min-height: 260px;
+  }
+  @include breakpoint($laptop) {
+    min-height: 450px;
+  }
+  h1 {
+    font-family: $font-family-secondary;
+    @include font-size(45px);
+    font-weight: normal;
+    padding: 0 40px;
+    @include breakpoint($tablet) {
+      @include font-size(60px);
+      max-width: 80%;
+      margin: 0 auto 20px auto;
+    }
+    @include breakpoint($laptop) {
+      @include font-size(85px);
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+    }
+  }
+  p {
+    display: none;
+    text-transform: uppercase;
+    color: #8d8d8d;
+    letter-spacing: 0.215em;
+    @include font-size(20px);
+    font-weight: 300;
+    @include breakpoint($laptop) {
+      display: block;
+    }
+  }
 }
 
 .footer {
-	width: 100%;
-	min-height: 100px;
-	background: #000;
-	padding: 15px 25px;
-	text-align: center;
-	@include breakpoint($laptop) {
-		padding: 0;
-		text-align: left;
-	}
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		@include breakpoint($laptop) {
-			flex-direction: row;
-		}
-		p, a {
-			color: #fff;
-			line-height: 1.6;
-		}
-		nav {
-			min-width: 350px;
-			justify-content: space-between;
-			display: none;
-			@include breakpoint($laptop) {
-				display: flex;
-				flex-direction: row;
-			}
-			a {
-				@include font-size(16px);
-				font-weight: 300;
-				text-transform: uppercase;
-				letter-spacing: 0.06em;
-				&:hover {
-					opacity: 0.7;
-				}
-			}
-		}
-	}
+  width: 100%;
+  min-height: 100px;
+  background: #000;
+  padding: 15px 25px;
+  text-align: center;
+  @include breakpoint($laptop) {
+    padding: 0;
+    text-align: left;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include breakpoint($laptop) {
+      flex-direction: row;
+    }
+    p,
+    a {
+      color: #fff;
+      line-height: 1.6;
+    }
+    nav {
+      min-width: 350px;
+      justify-content: space-between;
+      display: none;
+      @include breakpoint($laptop) {
+        display: flex;
+        flex-direction: row;
+      }
+      a {
+        @include font-size(16px);
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
 }
