@@ -28,6 +28,7 @@ div[role='group'][tabindex] {
 
     @include breakpoint($tablet) {
       min-height: 150px;
+      margin-left: auto;
     }
 
     @include breakpoint($laptop) {
