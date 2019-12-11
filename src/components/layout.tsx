@@ -24,7 +24,7 @@ interface LayoutPageTemplateState {
 export default class Layout extends React.Component<
   LayoutPageTemplateProps,
   LayoutPageTemplateState
-> {
+  > {
   public render() {
     const { location } = history;
     const hasFooter = location.pathname === '/';
@@ -50,7 +50,7 @@ export default class Layout extends React.Component<
               <a href='/' className='logo'>
                 <h1>{name}</h1>
               </a>
-              <MediaQuery maxDeviceWidth={992}>
+              <MediaQuery maxWidth={992}>
                 <div id='outer-container' className='mobile-menu-container'>
                   <Menu
                     disableAutoFocus={true}
@@ -79,7 +79,7 @@ export default class Layout extends React.Component<
                   </Menu>
                 </div>
               </MediaQuery>
-              <MediaQuery minDeviceWidth={992}>
+              <MediaQuery minWidth={992}>
                 <nav>
                   <Link to='/about'>About</Link>
                   <Link to='/portfolio'>Portfolio</Link>
@@ -94,20 +94,20 @@ export default class Layout extends React.Component<
         {hasFooter ? (
           ''
         ) : (
-          <div className='footer'>
-            <footer className='container footer'>
-              <div className='footer-copy'>
-                <p>Copyright © 2019 {name}. All rights reserved</p>
-              </div>
-              <nav>
-                <Link to='/about'>About</Link>
-                <Link to='/portfolio'>Portfolio</Link>
-                <Link to='/blog'>Blog</Link>
-                <Link to='/contact'>Contact</Link>
-              </nav>
-            </footer>
-          </div>
-        )}
+            <div className='footer'>
+              <footer className='container footer'>
+                <div className='footer-copy'>
+                  <p>Copyright © 2019 {name}. All rights reserved</p>
+                </div>
+                <nav>
+                  <Link to='/about'>About</Link>
+                  <Link to='/portfolio'>Portfolio</Link>
+                  <Link to='/blog'>Blog</Link>
+                  <Link to='/contact'>Contact</Link>
+                </nav>
+              </footer>
+            </div>
+          )}
       </>
     );
   }
