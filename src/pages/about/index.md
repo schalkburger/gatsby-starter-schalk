@@ -2,7 +2,7 @@
 templateKey: about-page
 image: /assets/penny-pace-grayscale.jpg
 title: About Me
-heading: Learn more about me
+heading: Learn more about Penny
 ---
 Skateboarder, tattoo addict, drummer, vintage furniture lover and communicator, collector, connector, creator. Performing at the sweet spot between beauty and programing to craft experiences that go beyond design. I work with Fortune 500 companies and startups.
 
